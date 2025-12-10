@@ -1,8 +1,10 @@
 services:
   - type: web
     name: sakila-laravel
-    env: php
     plan: free
-    buildCommand: "composer install"
-    startCommand: "php artisan serve --host 0.0.0.0 --port $PORT"
-    autoDeploy: true
+    runtime: docker
+    repo: https://github.com/dannamendoza637/sakila-laravel
+    branch: main
+    rootDir: .
+
+
