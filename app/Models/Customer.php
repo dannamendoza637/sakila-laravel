@@ -11,9 +11,10 @@ class Customer extends Model
     public $timestamps = false;
 
     public function rentals()
-    {
-        return $this->hasMany(Rental::class, 'customer_id');
-    }
+{
+    return $this->hasMany(Rental::class, 'customer_id', 'customer_id');
+}
+
 
     public function payments()
     {
@@ -25,4 +26,3 @@ class Customer extends Model
         return $this->belongsTo(Address::class, 'address_id');
     }
 }
-

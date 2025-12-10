@@ -1,21 +1,14 @@
 @extends('layout')
 
 @section('content')
-<h1>{{ $film->title }}</h1>
+<h2>Detalle de Película</h2>
 
-<p><strong>Descripción:</strong> {{ $film->description }}</p>
-
-<h4>Categorías:</h4>
-@foreach($film->categories as $c)
-    <span class="badge bg-success">{{ $c->name }}</span>
-@endforeach
-
-<h4 class="mt-4">Actores:</h4>
-<ul>
-@foreach($film->actors as $actor)
-    <li>{{ $actor->first_name }} {{ $actor->last_name }}</li>
-@endforeach
+<ul class="list-group">
+    <li class="list-group-item"><strong>ID:</strong> {{ $film->film_id }}</li>
+    <li class="list-group-item"><strong>Título:</strong> {{ $film->title }}</li>
+    <li class="list-group-item"><strong>Año:</strong> {{ $film->release_year }}</li>
+    <li class="list-group-item"><strong>Descripción:</strong> {{ $film->description }}</li>
 </ul>
 
+<a href="{{ route('films.index') }}" class="btn btn-secondary mt-3">Regresar</a>
 @endsection
-
