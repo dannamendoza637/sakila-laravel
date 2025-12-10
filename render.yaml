@@ -3,6 +3,7 @@ services:
     name: sakila-laravel
     runtime: php
     plan: free
+    env: php
     buildCommand: "composer install --no-dev --optimize-autoloader"
     startCommand: "php artisan serve --host 0.0.0.0 --port $PORT"
     autoDeploy: true
